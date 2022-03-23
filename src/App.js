@@ -19,8 +19,6 @@ import { UpdateUser } from './pages/UpdateUser';
 
 function App() {
 
-  //const url = window.location.href;
-
   return(
     <BrowserRouter>
       <Routes>
