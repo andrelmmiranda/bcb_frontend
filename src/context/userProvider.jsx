@@ -13,10 +13,10 @@ export const UserProvider = ({ children })=>{
 
     const setUserAtStorage = (user)=>{
         // Transforma o objeto em string e salva na localStorage
-        localStorage.setItem('user', user == null ? JSON.stringify({}) : JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user));
     }
 
-    setUserAtStorage(user);
+    // setUserAtStorage(user);
 
     const removeUserFromStorage = ()=>{
         localStorage.removeItem('user');
