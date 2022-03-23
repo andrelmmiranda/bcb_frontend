@@ -7,9 +7,13 @@ export const UserProvider = ({ children })=>{
 
     const [user, setUser] = useState(userData);
 
-// !user.hasOwnProperty('name') || user == null ? false : true
+    if(localStorage.get('user') === null){
+        localStorage.setItem('user', JSON.stringify({}));
+    }
 
-    const [isLogged, setIsLogged] = useState(false);
+    let hasProperty = !user.hasOwnProperty('name') || user == null ? false : true;
+
+    const [isLogged, setIsLogged] = useState(hasProperty);
 
     const setUserAtStorage = (user)=>{
         // Transforma o objeto em string e salva na localStorage
