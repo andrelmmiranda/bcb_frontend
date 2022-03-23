@@ -5,7 +5,7 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children })=>{
     // const userData = JSON.parse(localStorage.getItem('user'));
 
-    const userData = (typeof JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : JSON.stringify({}))
+    const userData = (typeof JSON.parse(localStorage.getItem('user')) == 'object' ? JSON.parse(localStorage.getItem('user')) : JSON.stringify({}));
 
     const [user, setUser] = useState(userData);
 
