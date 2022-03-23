@@ -7,7 +7,7 @@ export const UserProvider = ({ children })=>{
 
     const [user, setUser] = useState(userData);
 
-    if(localStorage.get('user') === null){
+    if(JSON.parse(localStorage.get('user')) === null){
         localStorage.setItem('user', JSON.stringify({}));
     }
 
